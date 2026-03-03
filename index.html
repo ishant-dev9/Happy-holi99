@@ -1,154 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Basic Meta Setup -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Page Title -->
-    <title>Rang – A Holi Story</title>
-
-    <!-- Google Font (Clean & Professional) -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rang – A Holi Story</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ===============================
-         BACKGROUND MUSIC (Manual File)
-         =============================== -->
-    <!-- You will place your own 15-30 sec music file inside assets folder -->
-    <audio id="bgMusic" loop>
-        <source src="assets/music.mp3" type="audio/mpeg">
-    </audio>
+<audio id="bgMusic" loop preload="auto" playsinline>
+    <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
 
-    <!-- ===============================
-         MAIN SLIDER CONTAINER
-         All pages will slide horizontally
-         =============================== -->
-    <div class="slider-wrapper">
+<div class="slider-wrapper">
+<div class="slider">
 
-        <div class="slider">
+<!-- PAGE 1 -->
+<section class="slide slide-1">
+<div class="content">
+<h1>Holi is about colors...</h1>
+<p>But some colors matter more than others.</p>
+<button id="startBtn" class="primary-btn">Let’s Begin</button>
+</div>
+</section>
 
-            <!-- ===============================
-                 PAGE 1 – BLACK & WHITE INTRO
-                 =============================== -->
-            <section class="slide slide-1">
+<!-- PAGE 2 -->
+<section class="slide slide-2">
+<div class="glass-card">
+<h2>Some people don’t need Holi to shine…</h2>
+<p>They already bring color wherever they go.</p>
+<div class="gif-container">
+<img src="assets/gif.gif" alt="Cute Holi GIF">
+</div>
+</div>
+<div class="swipe-hint">← Swipe →</div>
+</section>
 
-                <div class="content">
-                    <h1>Holi is about colors...</h1>
-                    <p>But some colors matter more than others.</p>
+<!-- PAGE 3 -->
+<section class="slide slide-3">
+<div class="game-header">
+<h2>Spread Some Colors 🎨</h2>
+<p id="colorCounter">Colors Spread: 0</p>
+</div>
+<div class="game-area" id="gameArea"></div>
+<div class="game-message" id="gameMessage">
+Okay… now this feels like Holi.
+</div>
+</section>
 
-                    <button id="startBtn" class="primary-btn">
-                        Let’s Begin
-                    </button>
-                </div>
+<!-- PAGE 4 -->
+<section class="slide slide-4">
 
-                <!-- Decorative floating particles container -->
-                <div class="particles"></div>
+<h2 class="secret-title">
+One color is hiding something…
+</h2>
 
-            </section>
+<div class="bubble-container">
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble special-bubble" id="secretBubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+</div>
 
+<div class="final-message" id="finalMessage">
+<div id="typeText"></div>
+</div>
 
-            <!-- ===============================
-                 PAGE 2 – COLOR REVEAL
-                 =============================== -->
-            <section class="slide slide-2">
+</section>
 
-                <div class="glass-card">
+</div>
+</div>
 
-                    <h2>
-                        Some people don’t need Holi to shine…
-                    </h2>
+<div class="nav-controls">
+<button id="prevBtn">◀</button>
+<button id="nextBtn">▶</button>
+</div>
 
-                    <p>
-                        They already bring color wherever they go.
-                    </p>
-
-                    <!-- GIF Placeholder -->
-                    <div class="gif-container">
-                        <!-- Replace gif.gif with your own file -->
-                        <img src="assets/gif.gif" alt="Cute Holi GIF">
-                    </div>
-
-                </div>
-
-                <div class="swipe-hint">
-                    ← Swipe →
-                </div>
-
-            </section>
-
-
-            <!-- ===============================
-                 PAGE 3 – MINI GAME
-                 =============================== -->
-            <section class="slide slide-3">
-
-                <div class="game-header">
-                    <h2>Spread Some Colors 🎨</h2>
-                    <p id="colorCounter">Colors Spread: 0</p>
-                </div>
-
-                <!-- This area will detect clicks for color splashes -->
-                <div class="game-area" id="gameArea"></div>
-
-                <!-- Hidden Message After 15 Clicks -->
-                <div class="game-message" id="gameMessage">
-                    Okay… now this feels like Holi.
-                </div>
-
-            </section>
-
-
-            <!-- ===============================
-                 PAGE 4 – SECRET MESSAGE
-                 =============================== -->
-            <section class="slide slide-4">
-
-                <h2 class="secret-title">
-                    One color is hiding something…
-                </h2>
-
-                <!-- Floating Color Bubbles -->
-                <div class="bubble-container">
-                    <div class="bubble"></div>
-                    <div class="bubble"></div>
-                    <div class="bubble special-bubble" id="secretBubble"></div>
-                    <div class="bubble"></div>
-                    <div class="bubble"></div>
-                </div>
-
-                <!-- Final Message (Hidden Initially) -->
-                <div class="final-message" id="finalMessage">
-                    <h3>Happy Holi 🌸</h3>
-                    <p>
-                        I hope your life stays as bright  
-                        as your smile.
-                    </p>
-                </div>
-
-            </section>
-
-        </div>
-
-    </div>
-
-
-    <!-- ===============================
-         NAVIGATION ARROWS (Desktop Support)
-         =============================== -->
-    <div class="nav-controls">
-        <button id="prevBtn">◀</button>
-        <button id="nextBtn">▶</button>
-    </div>
-
-
-    <!-- External JavaScript -->
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
